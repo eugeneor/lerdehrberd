@@ -5,3 +5,7 @@
 #
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
+GameBoard.create(title: "Street Fight II")
+GameBoard.create(title: "FIFA")
+GameBoard.create(title: "NHL")
+GameBoard.create(title: "Ping Pong")
