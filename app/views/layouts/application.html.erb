@@ -4,6 +4,7 @@
   <title>Lerdehrberd</title>
   <%= stylesheet_link_tag    "application", :media => "all" %>
   <%= javascript_include_tag "application" %>
+  <script src="/js/custom.modernizr.js"></script>
   <%= csrf_meta_tags %>
 </head>
 <body>
@@ -14,17 +15,21 @@
 <header>
 	<nav class="row">
 		<div class="small-12 columns">
-			<select>
-				Select A Game
-			  <option>Street Fighter 2</option>
-			</select>
+			<h1 class="center">Lerdehrberd</h1>
+			<form class="custom">
+			  <label class="center" for="customDropdown"><h2>Serect Ah Game</h2></label>
+			  <select id="customDropdown">
+			    <option>Streht Ferter</option>
+			    <option>En Hayche El 2013</option>
+			  </select>
+			</form>
 		</div>
 	</nav>
 </header>
 
 <div class="row">
 	<div class="small-12 columns">
-		<h1>Street Fighter 2 Championship Edition</h1>
+		<h2 class="center">Street Fighter 2 Rankings</h2>
 	</div>
 </div>
 
@@ -53,6 +58,16 @@
 </section>
 
 <%= yield %>
+
+<script>
+  $(document).foundation();
+  document.write('<script src=/js/vendor/'
+    + ('__proto__' in {} ? 'zepto' : 'jquery')
+    + '.js><\/script>');
+  document.write('<script src=/js/vendor/'
+    + ('__proto__' in {} ? 'zepto' : 'jquery')
+    + '.js><\/script>');
+</script>
 
 </body>
 
