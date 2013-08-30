@@ -14,6 +14,8 @@
 //= require jquery_ujs
 //= require foundation
 //= require jquery.ui.all
+//= require zepto.min
+//= require zepto.dragswap.min
 //= require_tree .
 
 $(document).foundation();
