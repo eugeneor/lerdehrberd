@@ -1,4 +1,10 @@
 <h1><%= @game_board.title %></h1>
-<p>Find me in app/views/boards/show.html.erb</p>
+<p>Leader board:</p>
+
+<ul>
+<% @game_board.sorted_entries.each do |entry| %>
+  <li><%= entry.display_name %></li>
+<% end %>
+</ul>
 
 <p><%= link_to 'Board List', root_path %></p>
