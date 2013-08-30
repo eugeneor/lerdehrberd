@@ -11,7 +11,17 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130830021631) do
+ActiveRecord::Schema.define(:version => 20130830032411) do
+
+  create_table "game_board_entries", :force => true do |t|
+    t.string   "display_name",                     :null => false
+    t.integer  "game_board_id",                    :null => false
+    t.integer  "rank",          :default => 99999, :null => false
+    t.datetime "created_at",                       :null => false
+    t.datetime "updated_at",                       :null => false
+  end
+
+  add_index "game_board_entries", ["game_board_id"], :name => "index_game_board_entries_on_game_board_id"
 
   create_table "game_boards", :force => true do |t|
     t.string   "title",      :null => false
