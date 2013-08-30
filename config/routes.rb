@@ -1,5 +1,6 @@
 Lerdehrberd::Application.routes.draw do
   resources :game_boards, only: [:index, :show]
+  resources :game_board_entries, only: [:create]
 
   # The priority is based upon order of creation:
   # first created -> highest priority.

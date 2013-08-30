@@ -2,6 +2,7 @@ class CreateGameBoards < ActiveRecord::Migration
   def up
     create_table :game_boards do |t|
       t.string :title, null: false
+      t.references :game_board
 
       t.timestamps
     end
