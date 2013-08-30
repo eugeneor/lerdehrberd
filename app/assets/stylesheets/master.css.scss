@@ -1,0 +1,14 @@
+// Place all the styles related to the boards controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+.player {
+	height: 150px;
+	border: solid 1px #d1d1d1;
+	border-radius: 5px;
+	margin-bottom: 20px;
+}
+
+.player:hover {
+	cursor: move;
+}
