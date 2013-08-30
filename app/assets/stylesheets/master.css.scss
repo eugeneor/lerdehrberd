@@ -2,13 +2,51 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
-.player {
-	height: 150px;
-	border: solid 1px #d1d1d1;
-	border-radius: 5px;
-	margin-bottom: 20px;
+$primary-color:#edd460;
+$secondary-color:#B3B3B1;
+$negative-color:#fff;
+$list-default-color:#fff;
+$list-hover-color:#d9dbde;
+$border-color:#f4f4f4;
+
+// Header styles
+$header-font-family: "Gibson", "Helvetica Neue", "Helvetica", Helvetica, Arial, sans-serif;
+$header-font-weight: 600;
+$header-font-style: normal;
+$header-font-color: $primary-color;
+$header-line-height: 3em;
+
+h1 { margin: 1.25rem 0 2rem 0; }
+h2 { margin: 0 0 0 0; }
+h3 { margin: 0 0 0 0; }
+h4 { margin: 0 0 0 0; }
+h5 { margin: 0 0 0 0; }
+h6 { margin: 0 0 10 0; }
+
+h1 {
+	text-align: center
 }
 
-.player:hover {
-	cursor: move;
+ol {
+	border-top: solid 4px $border-color;
+	li {
+		background: $list-default-color url("/assets/icon-handle.png") right center no-repeat;
+		border-bottom: solid 2px $border-color;
+		list-style: none;
+		padding: 1rem 1.25rem;
+		&:hover {
+			background-color: $list-hover-color;
+			cursor: move;
+			
+			&:hover h3 {
+				color: $negative-color;
+			}
+		}
+	}
+	
+}
+
+header {
+	background: $primary-color;
+	margin-top: 2em
 }
