@@ -1,6 +1,8 @@
 *.rbc
 *.sassc
 .sass-cache
+.DS_Store
+.git
 capybara-*.html
 .rspec
 /.bundle
