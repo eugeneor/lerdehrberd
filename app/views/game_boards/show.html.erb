@@ -7,4 +7,12 @@
 <% end %>
 </ul>
 
+<h2>Add yourself to this board:</h2>
+<%= form_tag('/game_board_entries', method: :post) do %>
+  <%= label_tag(:display_name, "Display Name:") %>
+  <%= text_field_tag(:display_name) %>
+  <%= hidden_field_tag(:game_board_id, @game_board.id) %>
+  <%= submit_tag("Add") %>
+<% end %>
+
 <p><%= link_to 'Board List', root_path %></p>
