@@ -24,7 +24,8 @@ h5 { margin: 0 0 0 0; }
 h6 { margin: 0 0 10 0; }
 
 h1 {
-	text-align: center
+	text-align: center;
+	text-transform: uppercase;
 }
 
 ol {
@@ -45,8 +46,12 @@ ol {
 	}
 	
 }
+	
+.center {
+	text-align: center;
+}
 
-header {
-	background: $primary-color;
-	margin-top: 2em
+.game-logo {
+	margin: 0 auto;
+	display: block;
 }
