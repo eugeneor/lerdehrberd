@@ -19,8 +19,8 @@
 <div class="row">
 	<div class="small-12 columns">
 		<ol class="lerdehrberd streetfighter sortable">
-			<% @game_board.sorted_entries.each do |entry| %>
-		  <li class="row player"><h3><%= entry.display_name %></h3></li>
+			<% @game_board.sorted_entries.each_with_index do |entry, index| %>
+		  <li class="row player"><h3><%= "##{index + 1}"%> <%= entry.display_name %></h3></li>
 		<% end %>
 		</ol>
 		<h2>Add yourself to this board:</h2>
