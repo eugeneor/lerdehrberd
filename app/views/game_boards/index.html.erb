@@ -1,0 +1,17 @@
+<% content_for :title do %>
+  A simple page
+<% end %>
+<header>
+	<nav class="row">
+    <div class="small-12 columns">
+      <form class="custom">
+        <label class="center" for="customDropdown"><h2>Serect Ah Game</h2></label>
+        <select id="customDropdown">
+          <% @game_boards.each do |game_board| %>
+            <option><%= link_to game_board.title, game_board_path(game_board.id) %></option>
+          <% end %>
+        </select>
+      </form>
+    </div>
+	</nav>
+</header>
