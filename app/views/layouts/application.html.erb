@@ -7,44 +7,45 @@
     <script src="/js/custom.modernizr.js"></script>
     <%= csrf_meta_tags %>
   </head>
-<body>
-<% flash.each do |name, msg| -%>
-  <%= content_tag :div, msg, class: name %>
-<% end -%>
 
-<div class="row">
-  <div class="small-12 columns">
-    <h1 class="center">Lerdehrberd</h1>
-  </div>
-</div>
+  <body>
+  <% flash.each do |name, msg| -%>
+    <%= content_tag :div, msg, class: name %>
+  <% end -%>
 
-<%= yield %>
-
-<section>
   <div class="row">
-    <ol class="lerdehrberd streetfighter sortable">
-      <li class="row player">
-        <h3>Stephen Phung</h3>
-      </li>
-      <li class="row player">
-        <h3>Kyle Demeule</h3>
-      </li>
-      <li class="row player">
-        <h3>Jason LaRiviere</h3>
-      </li>
-    </ol>
+    <div class="small-12 columns">
+      <h1 class="center">Lerdehrberd</h1>
+    </div>
   </div>
-</section>
 
-<script>
-  $(document).foundation();
-  document.write('<script src=/js/vendor/'
-    + ('__proto__' in {} ? 'zepto' : 'jquery')
-    + '.js><\/script>');
-  document.write('<script src=/js/vendor/'
-    + ('__proto__' in {} ? 'zepto' : 'jquery')
-    + '.js><\/script>');
-</script>
+  <%= yield %>
 
-</body>
+  <section>
+    <div class="row">
+      <ol class="lerdehrberd streetfighter sortable">
+        <li class="row player">
+          <h3>Stephen Phung</h3>
+        </li>
+        <li class="row player">
+          <h3>Kyle Demeule</h3>
+        </li>
+        <li class="row player">
+          <h3>Jason LaRiviere</h3>
+        </li>
+      </ol>
+    </div>
+  </section>
+
+  <script>
+    $(document).foundation();
+    document.write('<script src=/js/vendor/'
+      + ('__proto__' in {} ? 'zepto' : 'jquery')
+      + '.js><\/script>');
+    document.write('<script src=/js/vendor/'
+      + ('__proto__' in {} ? 'zepto' : 'jquery')
+      + '.js><\/script>');
+  </script>
+
+  </body>
 </html>
