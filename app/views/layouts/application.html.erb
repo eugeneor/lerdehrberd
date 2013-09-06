@@ -1,56 +1,52 @@
 <!DOCTYPE html>
-<html>
+<!-- paulirish.com/2008/conditional-stylesheets-vs-css-hacks-answer-neither/ -->
+<!--[if lt IE 7 ]> <html class="ie6" lang="en"> <![endif]-->
+<!--[if IE 7 ]>    <html class="ie7" lang="en"> <![endif]-->
+<!--[if IE 8 ]>    <html class="ie8" lang="en"> <![endif]-->
+<!--[if (gte IE 9)|!(IE)]><!--> <html lang="en"> <!--<![endif]-->
   <head>
-    <title>Lerdehrberd</title>
-    <%= stylesheet_link_tag    "application", :media => "all" %>
-    <%= javascript_include_tag "application" %>
-    <script src="/js/custom.modernizr.js"></script>
+    <meta charset="utf-8" />
+
+    <!-- Uncomment to make IE8 render like IE7 -->
+    <!-- <meta http-equiv="X-UA-Compatible" content="IE=7" /> -->
+
+    <!-- Set the viewport width to device width for mobile -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title><%= content_for?(:title) ? yield(:title) : "Lerdehrberd" %></title>
+
+    <%= stylesheet_link_tag    "application" %>
+    <%= javascript_include_tag "vendor/custom.modernizr" %>
     <%= csrf_meta_tags %>
-  </head>
+  </head> 
 
   <body>
-  <% flash.each do |name, msg| -%>
-    <%= content_tag :div, msg, class: name %>
-  <% end -%>
+    <% flash.each do |name, msg| -%>
+      <%= content_tag :div, msg, class: name %>
+    <% end -%>
 
-  <%= yield %>
+    <header>
+	    <div class="row">
+	      <div class="small-12 columns">
+	        <h1 class="center">Lerdehrberd</h1>
+	      </div>
+	    </div>
+		  <nav class="row">
+		    <div class="large-4 large-centered columns">
+		      <form class="custom">
+		        <label for="customDropdown"><h2>Serect Ah Game</h2></label>
+		        <select id="customDropdown">
+		          <% @game_boards.each do |game_board| %>
+		            <option value="<%= game_board_path(game_board.id) %>" <%= "selected" if @game_board.id == game_board.id %>><%= link_to game_board.title, game_board_path(game_board.id) %></option>
+		          <% end %>
+		        </select>
+		      </form>
+		    </div>
+		  </nav>
+		</header>
 
-  <section class="leaderboard row">
-    <div class="large-12 large-centered column">
-      <ol class="lerdehrberd streetfighter sortable">
-        <li class="row player">
-        	<span class="position">1</span>
-          <h3>Stephen Phung</h3>
-        </li>
-        <li class="row player">
-					<span class="position">2</span>
-          <h3>Kyle Demeule</h3>
-        </li>
-        <li class="row player">
-					<span class="position">3</span>
-          <h3>Jason LaRiviere</h3>
-        </li>
-				<li class="row player">
-         	<span class="position">4</span>
-          <h3>Eugene Or</h3>
-        </li>
-        <li class="row player">
-        	<span class="position">5</span>
-          <h3>Jeff Porter</h3>
-        </li>
-      </ol>
-    </div>
-  </section>
+    <%= yield %>
 
-  <script>
-    $(document).foundation();
-    document.write('<script src=/js/vendor/'
-      + ('__proto__' in {} ? 'zepto' : 'jquery')
-      + '.js><\/script>');
-    document.write('<script src=/js/vendor/'
-      + ('__proto__' in {} ? 'zepto' : 'jquery')
-      + '.js><\/script>');
-  </script>
-
+    <%= javascript_include_tag "application" %>
   </body>
 </html>

@@ -1,5 +1,5 @@
 Lerdehrberd::Application.routes.draw do
-  resources :game_boards, only: [:index, :show]
+  resources :game_boards, only: [:show]
   resources :game_board_entries, only: [:create]
 
   # The priority is based upon order of creation:
@@ -51,7 +51,7 @@ Lerdehrberd::Application.routes.draw do
 
   # You can have the root of your site routed with "root"
   # just remember to delete public/index.html.
-  root :to => 'game_boards#index'
+  root :to => 'game_boards#show'
 
   # See how all your routes lay out with "rake routes"
 
