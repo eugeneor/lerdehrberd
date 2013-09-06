@@ -1,68 +1,51 @@
 <!DOCTYPE html>
 <html>
-<head>
-  <title>Lerdehrberd</title>
-  <%= stylesheet_link_tag    "application", :media => "all" %>
-  <%= javascript_include_tag "application" %>
-  <script src="/js/custom.modernizr.js"></script>
-  <%= csrf_meta_tags %>
-</head>
-<body>
-<% flash.each do |name, msg| -%>
-  <%= content_tag :div, msg, class: name %>
-<% end -%>
+  <head>
+    <title>Lerdehrberd</title>
+    <%= stylesheet_link_tag    "application", :media => "all" %>
+    <%= javascript_include_tag "application" %>
+    <script src="/js/custom.modernizr.js"></script>
+    <%= csrf_meta_tags %>
+  </head>
 
-<header>
-	<nav class="row">
-		<div class="small-12 columns">
-			<h1 class="center">Lerdehrberd</h1>
-			<form class="custom">
-			  <label class="center" for="customDropdown"><h2>Serect Ah Game</h2></label>
-			  <select id="customDropdown">
-			    <option>Streht Ferter</option>
-			    <option>En Hayche El 2013</option>
-			  </select>
-			</form>
-		</div>
-	</nav>
-</header>
+  <body>
+  <% flash.each do |name, msg| -%>
+    <%= content_tag :div, msg, class: name %>
+  <% end -%>
 
-<section>
-	<div class="row">
-		<div class="large-12 columns">
-			<ol class="lerdehrberd streetfighter sortable">
-				<li class="row player">
-						<h3>Stephen Phung</h3>
-				</li>
-				<li class="row player">
-						<h3>Kyle Demeule</h3>
-				</li>
-				<li class="row player">
-						<h3>Jason LaRiviere</h3>
-				</li>
-				<li class="row player">
-						<h3>Jeff Porter</h3>
-				</li>
-				<li class="row player">
-						<h3>Eugene Or</h3>
-				</li>
-			</ol>
-		</div>
-	</div>
-</section>
+  <div class="row">
+    <div class="small-12 columns">
+      <h1 class="center">Lerdehrberd</h1>
+    </div>
+  </div>
 
-<%= yield %>
+  <%= yield %>
 
-<script>
-  $(document).foundation();
-  document.write('<script src=/js/vendor/'
-    + ('__proto__' in {} ? 'zepto' : 'jquery')
-    + '.js><\/script>');
-  document.write('<script src=/js/vendor/'
-    + ('__proto__' in {} ? 'zepto' : 'jquery')
-    + '.js><\/script>');
-</script>
+  <section>
+    <div class="row">
+      <ol class="lerdehrberd streetfighter sortable">
+        <li class="row player">
+          <h3>Stephen Phung</h3>
+        </li>
+        <li class="row player">
+          <h3>Kyle Demeule</h3>
+        </li>
+        <li class="row player">
+          <h3>Jason LaRiviere</h3>
+        </li>
+      </ol>
+    </div>
+  </section>
 
-</body>
+  <script>
+    $(document).foundation();
+    document.write('<script src=/js/vendor/'
+      + ('__proto__' in {} ? 'zepto' : 'jquery')
+      + '.js><\/script>');
+    document.write('<script src=/js/vendor/'
+      + ('__proto__' in {} ? 'zepto' : 'jquery')
+      + '.js><\/script>');
+  </script>
 
+  </body>
 </html>
