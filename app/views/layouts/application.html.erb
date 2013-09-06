@@ -21,11 +21,13 @@
   </head> 
 
   <body>
-    <div class="row center">
-      <div class="small-12 columns">
-        <% flash.each do |name, msg| -%>
-          <%= content_tag :div, msg, class: name %>
-        <% end -%>
+    <div id="flash-messages">
+      <div class="row center">
+        <div class="small-12 columns">
+          <% flash.each do |name, msg| -%>
+            <%= content_tag :div, msg, class: name %>
+          <% end -%>
+        </div>
       </div>
     </div>
 
