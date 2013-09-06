@@ -1,5 +1,5 @@
 <% content_for :title do %>
-  <%= @game_board.title %>
+  <h2 class="center"><%= @game_board.title %></h2>
 <% end %>
 
 <header>
@@ -19,11 +19,11 @@
 </header>
 <div class="row">
 	<div class="small-12 columns">
-		<ul>
-		<% @game_board.sorted_entries.each do |entry| %>
-		  <li><%= entry.display_name %></li>
+		<ol class="lerdehrberd streetfighter sortable">
+			<% @game_board.sorted_entries.each do |entry| %>
+		  <li class="row player"><h3><%= entry.display_name %></h3></li>
 		<% end %>
-		</ul>
+		</ol>
 
 		<h2>Add yourself to this board:</h2>
 		<%= form_tag('/game_board_entries', method: :post) do %>
