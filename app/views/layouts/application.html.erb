@@ -21,33 +21,17 @@
   </head> 
 
   <body>
-  <% flash.each do |name, msg| -%>
-    <%= content_tag :div, msg, class: name %>
-  <% end -%>
+    <% flash.each do |name, msg| -%>
+      <%= content_tag :div, msg, class: name %>
+    <% end -%>
 
-  <div class="row">
-    <div class="small-12 columns">
-      <h1 class="center">Lerdehrberd</h1>
-    </div>
-  </div>
-
-  <%= yield %>
-
-  <section>
     <div class="row">
-      <ol class="lerdehrberd streetfighter sortable">
-        <li class="row player">
-          <h3>Stephen Phung</h3>
-        </li>
-        <li class="row player">
-          <h3>Kyle Demeule</h3>
-        </li>
-        <li class="row player">
-          <h3>Jason LaRiviere</h3>
-        </li>
-      </ol>
+      <div class="small-12 columns">
+        <h1 class="center">Lerdehrberd</h1>
+      </div>
     </div>
-  </section>
+
+    <%= yield %>
 
     <%= javascript_include_tag "application" %>
   </body>

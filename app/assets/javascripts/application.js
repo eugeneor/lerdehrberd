@@ -19,16 +19,11 @@
 
 
 $(document).ready(function() {
-  // $('.sortable').dragswap({
-  //     element: 'article', // the child element you are targeting
-  //     overClass: 'over', // class when element goes over another element
-  //     moveClass: 'moving', // class when element is moving
-  //     dropClass: 'drop', // the class to add when the element is dropped
-  //     dropAnimation: false, // do you want to detect animation end?
-  //     exclude: '.disabled', // excluded elements selector
-  //     prefix: getPrefix(), // function to get the prefix of the browser
-  //     dropComplete: function(){} // what to do when the drop is complete
-  // })
+  $("#customDropdown").change(function() {
+    window.location.replace(this.value);
+  });
 });
+
+
 
 $(document).foundation();
