@@ -6,14 +6,13 @@
 <header>
   <nav class="row">
     <div class="small-12 columns">
-      <form class="custom" action="game_boards" method="get">
+      <form class="custom">
         <label class="center" for="customDropdown"><h2>Serect Ah Game</h2></label>
-        <select id="customDropdown" name="id">
+        <select id="customDropdown">
           <% @game_boards.each do |game_board| %>
             <option value="<%= game_board_path(game_board.id) %>" <%= "selected" if @game_board.id == game_board.id %>><%= link_to game_board.title, game_board_path(game_board.id) %></option>
           <% end %>
         </select>
-        <input type="submit" value="Go" id="submit" />
       </form>
     </div>
   </nav>
@@ -32,5 +31,3 @@
   <%= hidden_field_tag(:game_board_id, @game_board.id) %>
   <%= submit_tag("Add") %>
 <% end %>
-
-<p><%= link_to 'Board List', root_path %></p>
