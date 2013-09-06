@@ -1,7 +1,6 @@
 <% content_for :title do %>
   <%= @game_board.title %>
 <% end %>
-<p>Leader board:</p>
 
 <header>
   <nav class="row">
@@ -17,17 +16,19 @@
     </div>
   </nav>
 </header>
-
-<ul>
-<% @game_board.sorted_entries.each do |entry| %>
-  <li><%= entry.display_name %></li>
-<% end %>
-</ul>
-
-<h2>Add yourself to this board:</h2>
-<%= form_tag('/game_board_entries', method: :post) do %>
-  <%= label_tag(:display_name, "Display Name:") %>
-  <%= text_field_tag(:display_name) %>
-  <%= hidden_field_tag(:game_board_id, @game_board.id) %>
-  <%= submit_tag("Add") %>
-<% end %>
+<div class="row">
+	<div class="small-12 columns">
+		<ul>
+		<% @game_board.sorted_entries.each do |entry| %>
+		  <li><%= entry.display_name %></li>
+		<% end %>
+		</ul>
+		<h2>Add yourself to this board:</h2>
+		<%= form_tag('/game_board_entries', method: :post) do %>
+		  <%= label_tag(:display_name, "Display Name:") %>
+		  <%= text_field_tag(:display_name) %>
+		  <%= hidden_field_tag(:game_board_id, @game_board.id) %>
+		  <%= submit_tag("Add") %>
+		<% end %>
+	</div>
+</div>
