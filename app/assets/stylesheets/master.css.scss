@@ -24,34 +24,34 @@ h5 { margin: 0 0 0 0; }
 h6 { margin: 0 0 10 0; }
 
 h1 {
-	text-align: center;
-	text-transform: uppercase;
+  text-align: center;
+  text-transform: uppercase;
 }
 
 ol {
-	border-top: solid 4px $border-color;
-	li {
-		background: $list-default-color url("/assets/icon-handle.png") right center no-repeat;
-		border-bottom: solid 2px $border-color;
-		list-style: none;
-		padding: 1rem 1.25rem;
-		&:hover {
-			background-color: $list-hover-color;
-			cursor: move;
-			
-			&:hover h3 {
-				color: $negative-color;
-			}
-		}
-	}
-	
+  border-top: solid 4px $border-color;
+  li {
+    background: $list-default-color url("/assets/icon-handle.png") right center no-repeat;
+    border-bottom: solid 2px $border-color;
+    list-style: none;
+    padding: 1rem 1.25rem;
+    &:hover {
+      background-color: $list-hover-color;
+      cursor: move;
+
+      &:hover h3 {
+        color: $negative-color;
+      }
+    }
+  }
+
 }
-	
+
 .center {
-	text-align: center;
+  text-align: center;
 }
 
 .game-logo {
-	margin: 0 auto;
-	display: block;
+  margin: 0 auto;
+  display: block;
 }
