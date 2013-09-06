@@ -20,6 +20,9 @@
 
 
 $(document).ready(function() {
+  $("#customDropdown").change(function() {
+    window.location.replace(this.value);
+  });
   $('.sortable').dragswap({
       element: 'article', // the child element you are targeting
       overClass: 'over', // class when element goes over another element
@@ -29,7 +32,10 @@ $(document).ready(function() {
       exclude: '.disabled', // excluded elements selector
       prefix: getPrefix(), // function to get the prefix of the browser
       dropComplete: function(){} // what to do when the drop is complete
-  })
+  });
+  alert("theabovejavascripthaserrors");
 });
+
+
 
 $(document).foundation();

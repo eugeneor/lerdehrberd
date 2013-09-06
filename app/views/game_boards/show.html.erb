@@ -1,23 +1,23 @@
 <% content_for :title do %>
-  A simple page
+  <%= @game_board.title %>
 <% end %>
 <p>Leader board:</p>
 
 <header>
   <nav class="row">
     <div class="small-12 columns">
-      <form class="custom">
+      <form class="custom" action="game_boards" method="get">
         <label class="center" for="customDropdown"><h2>Serect Ah Game</h2></label>
-        <select id="customDropdown">
+        <select id="customDropdown" name="id">
           <% @game_boards.each do |game_board| %>
-            <option><%= link_to game_board.title, game_board_path(game_board.id) %></option>
+            <option value="<%= game_board_path(game_board.id) %>" <%= "selected" if @game_board.id == game_board.id %>><%= link_to game_board.title, game_board_path(game_board.id) %></option>
           <% end %>
         </select>
+        <input type="submit" value="Go" id="submit" />
       </form>
     </div>
   </nav>
 </header>
-
 
 <ul>
 <% @game_board.sorted_entries.each do |entry| %>
