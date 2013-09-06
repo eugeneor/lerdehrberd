@@ -1,8 +1,13 @@
 <header>
+  <div class="row collapse">
+    <div class="large-12 columns">
+      <h1>Lerdehrberd</h1>
+    </div>
+  </div>
 	<nav class="row">
-    <div class="small-12 columns">
+    <div class="large-4 large-centered columns">
       <form class="custom">
-        <label class="center" for="customDropdown"><h2>Serect Ah Game</h2></label>
+        <label for="customDropdown"><h2 class="center">Serect Ah Game</h2></label>
         <select id="customDropdown">
           <% @game_boards.each do |game_board| %>
             <option><%= link_to game_board.title, game_board_path(game_board.id) %></option>

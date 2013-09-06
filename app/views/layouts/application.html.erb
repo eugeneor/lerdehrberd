@@ -13,25 +13,30 @@
     <%= content_tag :div, msg, class: name %>
   <% end -%>
 
-  <div class="row">
-    <div class="small-12 columns">
-      <h1 class="center">Lerdehrberd</h1>
-    </div>
-  </div>
-
   <%= yield %>
 
-  <section>
-    <div class="row">
+  <section class="leaderboard row">
+    <div class="large-12 large-centered column">
       <ol class="lerdehrberd streetfighter sortable">
         <li class="row player">
+        	<span class="position">1</span>
           <h3>Stephen Phung</h3>
         </li>
         <li class="row player">
+					<span class="position">2</span>
           <h3>Kyle Demeule</h3>
         </li>
         <li class="row player">
+					<span class="position">3</span>
           <h3>Jason LaRiviere</h3>
+        </li>
+				<li class="row player">
+         	<span class="position">4</span>
+          <h3>Eugene Or</h3>
+        </li>
+        <li class="row player">
+        	<span class="position">5</span>
+          <h3>Jeff Porter</h3>
         </li>
       </ol>
     </div>
