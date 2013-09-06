@@ -84,6 +84,18 @@ ol {
   }
 }
 
+#flash-messages {
+	background: #d8433b; 
+}
+
+.notice {
+	color: #fff;
+  font-family: "Helvetica Neue", "Helvetica", Helvetica, Arial, sans-serif;
+  line-height: 60px;
+  text-align: center;
+  vertical-align: middle;
+}
+
 .row ol .row {
 	 margin: 0;
 }
