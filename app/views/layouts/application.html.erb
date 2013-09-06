@@ -12,26 +12,7 @@
   <%= content_tag :div, msg, class: name %>
 <% end -%>
 
-<header>
-	<nav class="row">
-		<div class="small-12 columns">
-			<h1 class="center">Lerdehrberd</h1>
-			<form class="custom">
-			  <label class="center" for="customDropdown"><h2>Serect Ah Game</h2></label>
-			  <select id="customDropdown">
-			    <option>Streht Ferter</option>
-			    <option>En Hayche El 2013</option>
-			  </select>
-			</form>
-		</div>
-	</nav>
-</header>
-
-<div class="row">
-	<div class="small-12 large-12">
-		<h1>Street Fighter 2 Championship Edition</h1>
-	</div>
-</div>
+<%= yield %>
 
 <section>
 	<div class="row">
@@ -48,8 +29,6 @@
 		</ol>
 	</div>
 </section>
-
-<%= yield %>
 
 <script>
   $(document).foundation();
