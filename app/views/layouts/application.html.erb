@@ -29,11 +29,25 @@
       </div>
     </div>
 
-    <div class="row">
-      <div class="small-12 columns">
-        <h1 class="center">Lerdehrberd</h1>
-      </div>
-    </div>
+    <header>
+	    <div class="row">
+	      <div class="small-12 columns">
+	        <h1 class="center">Lerdehrberd</h1>
+	      </div>
+	    </div>
+		  <nav class="row">
+		    <div class="large-4 large-centered columns">
+		      <form class="custom">
+		        <label for="customDropdown"><h2>Serect Ah Game</h2></label>
+		        <select id="customDropdown">
+		          <% @game_boards.each do |game_board| %>
+		            <option value="<%= game_board_path(game_board.id) %>" <%= "selected" if @game_board.id == game_board.id %>><%= link_to game_board.title, game_board_path(game_board.id) %></option>
+		          <% end %>
+		        </select>
+		      </form>
+		    </div>
+		  </nav>
+		</header>
 
     <%= yield %>
 
