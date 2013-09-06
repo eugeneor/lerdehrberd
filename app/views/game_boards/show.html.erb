@@ -1,20 +1,20 @@
 <% content_for :title do %>
-  A simple page
-<% end %>
-<p>Leader board:</p>
-
-<ul>
-<% @game_board.sorted_entries.each do |entry| %>
-  <li><%= entry.display_name %></li>
-<% end %>
-</ul>
-
-<h2>Add yourself to this board:</h2>
-<%= form_tag('/game_board_entries', method: :post) do %>
-  <%= label_tag(:display_name, "Display Name:") %>
-  <%= text_field_tag(:display_name) %>
-  <%= hidden_field_tag(:game_board_id, @game_board.id) %>
-  <%= submit_tag("Add") %>
+  <h2 class="center">A simple page</h2>
 <% end %>
 
-<p><%= link_to 'Board List', root_path %></p>
+<div class="row">
+	<div class="small-12 columns">
+		<ul>
+			<% @game_board.sorted_entries.each do |entry| %>
+		  	<li><%= entry.display_name %></li>
+			<% end %>
+		</ul>
+		<%= form_tag('/game_board_entries', method: :post) do %>
+		  <%= label_tag(:display_name, "Add Yourself To This Board:") %>
+		  <%= text_field_tag(:display_name) %>
+		  <%= hidden_field_tag(:game_board_id, @game_board.id) %>
+		  <%= submit_tag("Add") %>
+		<% end %>
+		<p><%= link_to 'Board List', root_path %></p>
+	</div>
+</div>
