@@ -22,6 +22,9 @@ $(document).ready(function() {
     window.location.replace(this.value);
   });
 
+  $( ".sortable" ).sortable();
+  $( ".sortable" ).disableSelection();
+
 });
 
 
