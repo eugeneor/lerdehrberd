@@ -14,7 +14,6 @@
 //= require jquery_ujs
 //= require foundation
 //= require jquery.ui.all
-//= jquery.ui.swappable
 //= require_tree .
 
 
@@ -22,6 +21,10 @@ $(document).ready(function() {
   $("#customDropdown").change(function() {
     window.location.replace(this.value);
   });
+
+  $( ".sortable" ).sortable();
+  $( ".sortable" ).disableSelection();
+
 });
 
 

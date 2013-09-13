@@ -7,7 +7,12 @@ gem 'rails', '3.2.11'
 
 gem 'sqlite3'
 
-gem 'debugger'
+group :development, :test do
+  gem 'rspec-rails', '~> 2.0'
+  gem 'debugger'
+  gem 'factory_girl_rails'
+end
+
 
 
 # Gems used only for assets and not required

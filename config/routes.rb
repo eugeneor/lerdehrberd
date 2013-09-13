@@ -1,6 +1,6 @@
 Lerdehrberd::Application.routes.draw do
   resources :game_boards, only: [:show]
-  resources :game_board_entries, only: [:create]
+  resources :game_board_entries, only: [:create, :update, :destroy]
 
   # The priority is based upon order of creation:
   # first created -> highest priority.
