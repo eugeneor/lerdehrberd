@@ -13,6 +13,6 @@ class GameBoardsController < ApplicationController
   def record_match
     game_board = GameBoard.find(params[:id].to_i)
     game_board.swap_rankings(params[:winner_id], params[:loser_id])
-    render status: :ok
+    render text: "OK"
   end
 end

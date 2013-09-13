@@ -9,4 +9,16 @@ class GameBoardEntriesController < ApplicationController
       redirect_to game_board_path(@game_board.id), alert: "You could not be added to the board."
     end
   end
+
+  def update
+    game_board_entry = GameBoardEntry.find(params[:id])
+    game_board_entry.update_attributes!(display_name: params[:display_name])
+    render text: "OK"
+  end
+
+  def destroy
+    game_board_entry = GameBoardEntry.find(params[:id])
+    game_board_entry.destroy || raise(ActiveRecord::RecordNotDestroyed)
+    render text: "OK"
+  end
 end
