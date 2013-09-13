@@ -9,9 +9,9 @@
 		  <li class="row player"><span class="position"><%= "#{index + 1}"%></span> <h3><%= entry.display_name %></h3></li>
 		<% end %>
 		</ol>
-		<h2>Add yourself to this board:</h2>
+		<h2>Add Yourself</h2>
 		<%= form_tag('/game_board_entries', method: :post) do %>
-		  <%= label_tag(:display_name, "Display Name:") %>
+		  <%= label_tag(:display_name, "") %>
 		  <%= text_field_tag(:display_name) %>
 		  <%= hidden_field_tag(:game_board_id, @game_board.id) %>
 		  <%= submit_tag("Add") %>
