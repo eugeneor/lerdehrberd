@@ -1,0 +1,37 @@
+$('.entypo-cancel').click(function(){
+    $('.user-delete-confirmation').hide();
+    $('.user-controls').show();
+    var clicked = $(this);
+    var controls = clicked.parents('.user-controls');
+    var alert = controls.siblings('.user-delete-confirmation');
+    $(controls).hide();
+    $(alert).show();
+  });
+
+<div class="leaderboard row">
+  <div class="small-12 columns">
+    <ol class="lerdehrberd streetfighter sortable" id="swappable">
+      <% @game_board.sorted_entries.each_with_index do |entry, index| %>
+        <li class="row player">
+	        	<span class="position"><%= "#{index + 1}"%></span>
+	        	<h3 class="user-info">
+              <%= entry.display_name %>	
+            </h3>	  		
+            <div class="user-controls">
+              <a href="#"><span class="entypo-pencil"></span></a>
+              <a><span class="entypo-cancel"></span></a>
+            </div>
+						<div class="user-delete-confirmation">
+							<a class="button">Delete User</a> <a class="button secondary">Cancel</a>
+						</div>
+        </li>
+      <% end %>
+    </ol>
+    <h2>Add yourself to this board</h2>
+    <%= form_tag('/game_board_entries', method: :post) do %>
+      <%= text_field_tag(:display_name) %>
+      <%= hidden_field_tag(:game_board_id, @game_board.id) %>
+      <%= submit_tag "Add",:class => "button" %>
+    <% end %>
+  </div>
+</div>

@@ -1,20 +1,37 @@
 <% content_for :title do %>
-	<%= @game_board.title %>
+  <%= @game_board.title %>
 <% end %>
 
-<div class="leaderboard row">
-	<div class="small-12 columns">
-		<ol class="lerdehrberd streetfighter sortable">
-			<% @game_board.sorted_entries.each_with_index do |entry, index| %>
-		  <li class="row player"><span class="position"><%= "#{index + 1}"%></span> <h3><%= entry.display_name %></h3></li>
-		<% end %>
-		</ol>
-		<h2>Add Yourself</h2>
-		<%= form_tag('/game_board_entries', method: :post) do %>
-		  <%= label_tag(:display_name, "") %>
-		  <%= text_field_tag(:display_name) %>
-		  <%= hidden_field_tag(:game_board_id, @game_board.id) %>
-		  <%= submit_tag("Add") %>
-		<% end %>
-	</div>
+<div class="leaderboard">
+  <div class="row">
+    <div class="small-12 columns">
+      <ol class="lerdehrberd streetfighter sortable" id="swappable">
+        <% @game_board.sorted_entries.each_with_index do |entry, index| %>
+          <li class="row player"><span class="position"><%= "#{index + 1}"%></span>
+            <h3><%= entry.display_name %></h3>
+            <div class="user-controls">
+              <a href="#"><span class="entypo-pencil"></span></a>
+              <a href="#"><span class="entypo-cancel"></span></a>
+            </div>
+            <div class="user-delete-confirmation">
+              <a class="button">Delete User</a> <a class="button secondary">Cancel</a>
+            </div>
+        </li>
+      <% end %>
+      </ol>
+    </div>
+  </div>
+</div>  
+ 
+<div class="add-name">
+  <div class="row">
+    <div class="large-6 large-centered columns"> 
+      <h2 class="center">Add yourself to this board</h2>
+      <%= form_tag('/game_board_entries', method: :post) do %>
+        <%= text_field_tag(:display_name) %>
+        <%= hidden_field_tag(:game_board_id, @game_board.id) %>
+        <%= submit_tag "Add my name", :class => "button" %>
+      <% end %>
+    </div>
+  </div>
 </div>
